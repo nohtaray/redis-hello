@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  redis:
+    image: redis:5.0
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --dir /data/
+    volumes:
+       - ./.redis:/data
+
